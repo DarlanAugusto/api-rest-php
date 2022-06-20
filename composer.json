@@ -3,8 +3,12 @@
     "type": "metapackage",
     "autoload": {
         "psr-4": {
+            "App\\":"App",
             "Darlan\\ApiRest\\": "src/"
-        }
+        },
+        "files": [
+            "config.php"
+        ]
     },
     "authors": [
         {
