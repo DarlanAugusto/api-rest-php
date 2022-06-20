@@ -1,0 +1,16 @@
+{
+    "name": "darlan/api-rest",
+    "type": "metapackage",
+    "autoload": {
+        "psr-4": {
+            "Darlan\\ApiRest\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Darlan Silva",
+            "email": "darlansilv4@gmail.com"
+        }
+    ],
+    "require": {}
+}
