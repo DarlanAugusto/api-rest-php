@@ -17,13 +17,14 @@
             //
             if($id) {
                 //
-                return User::get($id);
+                $user = User::get($id);
+                return $user;
             }
             else {
-                // return User::getAll();
+                //
+                $users = User::getAll();
+                return $users;
             }
-
-            return "Opa, deu certo!";
         }
 
         public function update() {

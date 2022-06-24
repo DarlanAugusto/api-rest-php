@@ -23,11 +23,38 @@ class User {
             //
             // Retorna o usuário encontrado
             //
-            return $stmt->fetch(PDO::FETCH_ASSOC);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $user;
         } 
         else {
             //
             // Usuário não encontrado, retorna erro
+            //
+            throw new \Exception("Nenhum usuário encontrado!");
+        }
+    }
+
+    public static function getAll() {
+        //
+        // Selecionando todos os usuários
+        //
+        $connPdo = ConnectionService::run();
+
+        $sql = "SELECT * FROM " . self::$table;
+
+        $stmt = $connPdo->prepare($sql);
+        $stmt->execute();
+
+        if($stmt->rowCount() > 0) {
+            //
+            // Retorna o usuário encontrado
+            //
+            $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $user;
+        } 
+        else {
+            //
+            // Nenhum usuário encontrado!
             //
             throw new \Exception("Nenhum usuário encontrado!");
         }
