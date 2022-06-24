@@ -1,6 +1,8 @@
 <?php
     namespace App\Services;
 
+    use App\Models\User;
+
     class UserService {
 
         public function post() {
@@ -9,10 +11,18 @@
             //
         }
 
-        public function get() {
+        public function get($id = null) {
             //
             // Read
             //
+            if($id) {
+                //
+                return User::get($id);
+            }
+            else {
+                // return User::getAll();
+            }
+
             return "Opa, deu certo!";
         }
 

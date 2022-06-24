@@ -1,8 +1,8 @@
 <?php
     namespace App\Models;
 
-use App\Services\ConnectionService;
-use PDO;
+    use App\Services\ConnectionService;
+    use PDO;
 
 class User {
     private static $table = "user"; // nome da tabela no BD
