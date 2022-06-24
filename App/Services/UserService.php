@@ -13,6 +13,7 @@
             //
             // Read
             //
+            return "Opa, deu certo!";
         }
 
         public function update() {
