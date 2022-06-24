@@ -13,17 +13,19 @@ class User {
         //
         $connPdo = ConnectionService::run(); // conecta com o banco
 
-        $sql = "SELECT * FROM " . self::$table . " WHERE id = :id";
-        $stmt = $connPdo->prepare($sql);
-        $stmt->bindValue(':id', $id);
-        $stmt->execute();
+        $sql = "SELECT * FROM " . self::$table . " WHERE id = :id"; // select na tabela user
+
+        $stmt = $connPdo->prepare($sql); // prepara a sql para ser executada
+        $stmt->bindValue(':id', $id); // informa o id do usuário ao parâmetro da sql, para evitar SQL INJECTION
+        $stmt->execute(); // executa a sql
 
         if($stmt->rowCount() > 0) {
             //
             // Retorna o usuário encontrado
             //
             return $stmt->fetch(PDO::FETCH_ASSOC);
-        } else {
+        } 
+        else {
             //
             // Usuário não encontrado, retorna erro
             //
